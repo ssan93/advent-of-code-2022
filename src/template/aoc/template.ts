@@ -32,8 +32,8 @@ class Resolver {
   }
 }
 
-const day = '{{day}}'
-const testing = false
+const day = '02'
+const testing = true
 
 const resolver = new Resolver({ day, testing })
 resolver.solve1()
