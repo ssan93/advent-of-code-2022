@@ -10,16 +10,21 @@ class Resolver {
   constructor ({ day, testing }: { day: string, testing: boolean}) {
     this.day = day
     this.file = parseFile(day, testing ? 'test' : 'data')
-    this.lines = this.file.split('\n')
+    this.lines = this.file.split('\n\n')
   }
 
   solve1 () {
     const logger = new Logger(`Day${this.day}-1`)
-    const maxCal = this.file.split('\n\n').reduce((max, next) => {
-      const allCalories = next.split('\n').reduce((acc, num) => acc + parseInt(num), 0);
-      return Math.max(max, allCalories);
-    },0);
-    const result = maxCal
+    const values = new Int32Array(3);
+    this.lines.forEach(line => {
+      values[2]=(line.split('\n').reduce((acc, num) => acc + +num, 0))
+      values.sort((a, b) => b - a)
+    })
+    // const maxCal = this.file.split('\n\n').reduce((max, next) => {
+    //   const allCalories = next.split('\n').reduce((acc, num) => acc + parseInt(num), 0);
+    //   return Math.max(max, allCalories);
+    // },0);
+    const result = values[0]
     logger.result(result)
   }
 
