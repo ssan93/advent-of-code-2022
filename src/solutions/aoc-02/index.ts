@@ -14,7 +14,7 @@ class Resolver {
 
   solve1 () {
     const logger = new Logger(`Day${this.day}-1`)
-    const values = {}
+    const values: any[] =[]
     // values["A X"] = 3;  values["B X"] = 0;    values["C X"] = 6
     // values["A Y"] = 6;  values["B Y"] = 3;    values["C Y"] = 0
     // values["A Z"] = 0;  values["B Z"] = 6;    values["C Z"] = 3
@@ -47,7 +47,7 @@ class Resolver {
 
   solve2 () {
     const logger = new Logger(`Day${this.day}-2`)
-    const values = {}
+    const values: any[] =[]
     const res = {}
     // values["A X"] = 3;    values["B X"] = 1;    values["C X"] = 2
     // values["A Y"] = 1;    values["B Y"] = 2;    values["C Y"] = 3

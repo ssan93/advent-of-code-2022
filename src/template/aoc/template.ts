@@ -32,7 +32,7 @@ class Resolver {
   }
 }
 
-const day = '02'
+const day = '04'
 const testing = true
 
 const resolver = new Resolver({ day, testing })
